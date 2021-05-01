@@ -2,13 +2,21 @@ package com.sophos.logicaprogramacion;
 
 import java.util.Scanner;
 
+import com.sophos.logicaprogramacion.figuras.Cuadrilatero;
+import com.sophos.logicaprogramacion.figuras.Figura;
 import com.sophos.logicaprogramacion.paquete2.ModificadorDos;
 import com.sophos.logicaprogramacion.vehiculo.Vehiculo;
 
 public class Main {
 
 	public static void main(String[] args) {
-//		Vehiculo carro1 = new Vehiculo();
+		Cuadrilatero cuadrado = new Cuadrilatero();
+		cuadrado.setArea(5);
+		System.out.println("El área del cuadrado es: " + cuadrado.getArea());
+	}
+
+	public void metodoClase3() {
+		Vehiculo carro1 = new Vehiculo();
 //		System.out.println(carro1.getMarca());
 //
 //		Vehiculo carro2 = new Vehiculo(4, "azul", "renault");
