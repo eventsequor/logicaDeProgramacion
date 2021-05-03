@@ -3,6 +3,7 @@ package com.sophos.logicaprogramacion;
 import java.util.Scanner;
 
 import com.sophos.logicaprogramacion.figuras.Cuadrilatero;
+import com.sophos.logicaprogramacion.figuras.Ejemplo;
 import com.sophos.logicaprogramacion.figuras.Figura;
 import com.sophos.logicaprogramacion.paquete2.ModificadorDos;
 import com.sophos.logicaprogramacion.vehiculo.Vehiculo;
@@ -10,9 +11,9 @@ import com.sophos.logicaprogramacion.vehiculo.Vehiculo;
 public class Main {
 
 	public static void main(String[] args) {
-		Cuadrilatero cuadrado = new Cuadrilatero();
-		cuadrado.setArea(5);
+		Cuadrilatero cuadrado = new Cuadrilatero(5.0, 4.0);
 		System.out.println("El área del cuadrado es: " + cuadrado.getArea());
+	
 	}
 
 	public void metodoClase3() {
