@@ -1,4 +1,4 @@
-package com.sophos.logicaprogramacion.figuras;
+package com.sophos.logicaprogramacion;
 
 public class Ejemplo {
 	private String nombre;

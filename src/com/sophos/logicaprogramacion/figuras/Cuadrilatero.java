@@ -8,13 +8,20 @@ public class Cuadrilatero extends Figura {
 		super();
 		this.ladoA = ladoA;
 		this.ladoB = ladoB;
-		super.setArea(calcularArea());
-
+		setArea(calcularArea());
+		setPerimetro(calcularPerimetro());
 	}
 
-	public double calcularArea() {
+	private double calcularArea() {
 		return ladoA * ladoB;
 	}
+
+	private double calcularPerimetro() {
+		return 2 * (ladoA + ladoB);
+	}
 	
-	
+	public String soyUnaFigura() {
+		return "soy una figura cuadrilatera";
+	}
+
 }

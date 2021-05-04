@@ -3,17 +3,80 @@ package com.sophos.logicaprogramacion;
 import java.util.Scanner;
 
 import com.sophos.logicaprogramacion.figuras.Cuadrilatero;
-import com.sophos.logicaprogramacion.figuras.Ejemplo;
 import com.sophos.logicaprogramacion.figuras.Figura;
+import com.sophos.logicaprogramacion.figuras.Triangulo;
 import com.sophos.logicaprogramacion.paquete2.ModificadorDos;
 import com.sophos.logicaprogramacion.vehiculo.Vehiculo;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Cuadrilatero cuadrado = new Cuadrilatero(5.0, 4.0);
+		Triangulo triguanlo = new Triangulo(11, 11, 9);
+		System.out.println("Área del triangulo " + triguanlo.getArea());
+		System.out.println("Perimetro del triangulo " + triguanlo.getPerimetro());
+		int triangulos = 0;
+		int cuadrados = 0;
+		Figura[] misFiguras = genera(20);
+		System.out.println(misFiguras.length);
+		for (Figura figura : misFiguras) {
+			if (figura instanceof Triangulo) {
+				triangulos++;
+			} else if (figura instanceof Cuadrilatero) {
+				cuadrados++;
+			}
+		}
+
+		System.out.println("Tengo " + triangulos + " triangulos");
+		System.out.println("Tengo " + cuadrados + " cuadrados");
+	}
+
+	public static Figura[] genera(int tamanho) {
+		Figura[] listaFiguras = new Figura[tamanho];
+		for (int i = 0; i < listaFiguras.length; i++) {
+			if (randomNum() > 5) {
+				listaFiguras[i] = new Cuadrilatero((double) randomNum(), (double) randomNum());
+			} else {
+				listaFiguras[i] = new Triangulo((double) randomNum(), (double) randomNum(), (double) randomNum());
+			}
+		}
+
+		return listaFiguras;
+	}
+
+	public static int randomNum() {
+		return (int) Math.floor(Math.random() * (1 - 10 + 1) + 10);
+	}
+
+	public void arreglos() {
+		double notas[] = new double[5];
+		notas[0] = 5;
+		notas[1] = 4;
+		notas[2] = 3;
+		notas[3] = 0;
+		notas[4] = 4.5;
+		double resultado = 0;
+		for (double nota : notas) {
+			resultado += nota;
+		}
+		System.out.println("Promedio de la nota: " + resultado / 5);
+	}
+
+	public void yaContinuamos() {
+		Figura rectangulo = new Cuadrilatero(5.0, 5.0);
+
+		if (rectangulo instanceof Cuadrilatero) {
+			System.out.println("Esto es un cuadrilatero");
+			Cuadrilatero aux = (Cuadrilatero) rectangulo;
+			System.out.println(aux.soyUnaFigura());
+		} else {
+			System.out.println("Esto no es un cuadrilateros");
+		}
+	}
+
+	public void metodoHerenciaClase4() {
+		Cuadrilatero cuadrado = new Cuadrilatero(6.0, 25.0);
 		System.out.println("El área del cuadrado es: " + cuadrado.getArea());
-	
+		System.out.println("El perimetro del cuadrado es: " + cuadrado.getPerimetro());
 	}
 
 	public void metodoClase3() {
